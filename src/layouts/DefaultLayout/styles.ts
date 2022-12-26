@@ -7,6 +7,7 @@ export const LayoutContainer = styled.main`
   background: ${(props) => props.theme.background};
   border-radius: 8px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 
   -webkit-box-shadow: 7px 10px 21px -15px rgba(0, 0, 0, 0.59);

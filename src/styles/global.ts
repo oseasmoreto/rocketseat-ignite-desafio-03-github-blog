@@ -18,4 +18,22 @@ body {
 body, input, textarea, button {
   font: 400 1rem Nunito, sans-serif;
 }
+
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: auto;
+
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: ${(props) => props.theme.blue};
+
+  transition: all 0.2s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
 `
