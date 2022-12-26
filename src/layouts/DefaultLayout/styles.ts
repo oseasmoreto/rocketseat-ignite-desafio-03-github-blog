@@ -13,4 +13,8 @@ export const LayoutContainer = styled.main`
   -webkit-box-shadow: 7px 10px 21px -15px rgba(0, 0, 0, 0.59);
   -moz-box-shadow: 7px 10px 21px -15px rgba(0, 0, 0, 0.59);
   box-shadow: 7px 10px 21px -15px rgba(0, 0, 0, 0.59);
+
+  @media (max-width: 1400px) {
+    padding: 0;
+  }
 `
