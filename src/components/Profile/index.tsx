@@ -14,13 +14,13 @@ export function Profile() {
         </p>
         <ul>
           <li>
-            <GithubLogo size={20} /> oseasmoreto
+            <GithubLogo size={18} /> oseasmoreto
           </li>
           <li>
-            <Buildings size={20} /> web.art group
+            <Buildings size={18} /> web.art group
           </li>
           <li>
-            <Users size={20} /> 10 seguidores
+            <Users size={18} /> 10 seguidores
           </li>
         </ul>
       </div>

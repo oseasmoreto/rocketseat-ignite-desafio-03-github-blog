@@ -10,9 +10,12 @@ export const ProfileContainer = styled.section`
   min-height: 212px;
 
   padding: 2rem 2.5rem;
+  margin-top: -88px;
 
   background-color: ${(props) => props.theme.profile};
   border-radius: 10px;
+
+  box-shadow: 0 26px 2px 0 rgba(0, 0, 0, 0.2%);
 
   img {
     width: 148px;
@@ -53,6 +56,8 @@ export const ProfileContainer = styled.section`
       li {
         display: flex;
         align-items: center;
+        gap: 0.5rem;
+
         color: ${(props) => props.theme.subtitle};
         font-size: 1rem;
         line-height: 1.6;
