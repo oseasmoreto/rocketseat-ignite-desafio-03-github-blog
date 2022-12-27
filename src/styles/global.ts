@@ -36,4 +36,10 @@ a {
     text-decoration: underline;
   }
 }
+
+.no-hover {
+  &:hover {
+    text-decoration: none;
+  }
+}
 `
