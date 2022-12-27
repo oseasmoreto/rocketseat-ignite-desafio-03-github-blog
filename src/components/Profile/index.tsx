@@ -1,4 +1,10 @@
-import { Buildings, GithubLogo, Link, Users } from 'phosphor-react'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import {
+  faArrowUpRightFromSquare,
+  faBuilding,
+  faUserGroup,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ProfileContainer } from './styles'
 
 export function Profile() {
@@ -14,7 +20,8 @@ export function Profile() {
             rel="noreferrer"
             className="link-github"
           >
-            GITHUB <Link size={16} />
+            GITHUB{' '}
+            <FontAwesomeIcon fontSize={12} icon={faArrowUpRightFromSquare} />
           </a>
         </div>
         <p>
@@ -24,13 +31,13 @@ export function Profile() {
         </p>
         <ul>
           <li>
-            <GithubLogo size={18} /> oseasmoreto
+            <FontAwesomeIcon fontSize={18} icon={faGithub} /> oseasmoreto
           </li>
           <li>
-            <Buildings size={18} /> web.art group
+            <FontAwesomeIcon fontSize={18} icon={faBuilding} /> web.art group
           </li>
           <li>
-            <Users size={18} /> 10 seguidores
+            <FontAwesomeIcon fontSize={18} icon={faUserGroup} /> 10 seguidores
           </li>
         </ul>
       </div>

@@ -1,11 +1,11 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
-  ArrowArcLeft,
-  ArrowLeft,
-  Buildings,
-  GithubLogo,
-  Link,
-  Users,
-} from 'phosphor-react'
+  faArrowUpRightFromSquare,
+  faCalendarDay,
+  faChevronLeft,
+  faComment,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { HeaderContainer } from './styles'
 
 export function Header() {
@@ -18,7 +18,7 @@ export function Header() {
           rel="noreferrer"
           className="link-back"
         >
-          <ArrowLeft size={16} /> VOLTAR
+          <FontAwesomeIcon fontSize={12} icon={faChevronLeft} /> VOLTAR
         </a>
         <a
           href="https://github.com/oseasmoreto"
@@ -26,19 +26,20 @@ export function Header() {
           rel="noreferrer"
           className="link-github"
         >
-          VER NO GITHUB <Link size={16} />
+          VER NO GITHUB{' '}
+          <FontAwesomeIcon fontSize={12} icon={faArrowUpRightFromSquare} />
         </a>
       </div>
       <h3>JavaScript data types and data structures</h3>
       <ul>
         <li>
-          <GithubLogo size={18} /> oseasmoreto
+          <FontAwesomeIcon fontSize={18} icon={faGithub} /> oseasmoreto
         </li>
         <li>
-          <Buildings size={18} /> web.art group
+          <FontAwesomeIcon fontSize={18} icon={faCalendarDay} /> web.art group
         </li>
         <li>
-          <Users size={18} /> 10 seguidores
+          <FontAwesomeIcon fontSize={18} icon={faComment} /> 10 seguidores
         </li>
       </ul>
     </HeaderContainer>
