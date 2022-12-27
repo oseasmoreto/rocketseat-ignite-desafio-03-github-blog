@@ -37,6 +37,12 @@ export const ItemContainer = styled.article`
     color: ${(post) => post.theme.text};
     font-size: 1rem;
     line-height: 1.6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   &:hover {

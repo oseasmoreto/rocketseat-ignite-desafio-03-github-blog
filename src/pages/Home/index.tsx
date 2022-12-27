@@ -13,7 +13,7 @@ export function Home() {
       <SearchForm />
       <div className="list-post">
         {posts.map((post) => {
-          return <PostItem key={post.id} />
+          return <PostItem post={post} key={post.id} />
         })}
       </div>
     </HomeContainer>
