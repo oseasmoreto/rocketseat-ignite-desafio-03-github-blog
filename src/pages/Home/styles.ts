@@ -9,6 +9,12 @@ export const HomeContainer = styled.div`
 
   height: 100%;
 
+  .list-post {
+    display: flex;
+    width: 100%;
+    max-width: 55.25rem;
+  }
+
   @media (max-width: 1024px) {
     padding: 0 1rem;
   }

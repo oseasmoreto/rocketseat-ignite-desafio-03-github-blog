@@ -4,7 +4,7 @@ export const SearchFormContainer = styled.div`
   display: block;
   width: 100%;
   max-width: 55.25rem;
-  padding: 1.5rem 0;
+  padding-top: 1.5rem;
 
   p {
     display: flex;
