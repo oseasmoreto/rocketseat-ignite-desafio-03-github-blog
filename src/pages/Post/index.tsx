@@ -5,6 +5,7 @@ export function Post() {
   return (
     <PostContainer>
       <PostHeader />
+      <div className="box-content">teste</div>
     </PostContainer>
   )
 }
