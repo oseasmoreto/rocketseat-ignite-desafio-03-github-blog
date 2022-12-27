@@ -6,18 +6,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useCallback, useEffect, useState } from 'react'
+import { User } from '../../contexts/PostsContext'
 import { api } from '../../lib/api'
 import { ProfileContainer } from './styles'
-
-interface User {
-  name: string
-  user: string
-  bio: string
-  company: string
-  photo: string
-  followers: number
-  url: string
-}
 
 export function Profile() {
   const [user, setUser] = useState<User | null>(null)
