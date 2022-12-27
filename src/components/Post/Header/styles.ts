@@ -73,34 +73,11 @@ export const HeaderContainer = styled.section`
     max-width: 100%;
     padding: 2rem 2.5rem;
 
-    .box-profile {
-      .header {
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-
-        h3 {
-          text-align: center;
-          margin-bottom: 1rem;
-        }
-
-        .link-github {
-          align-self: center;
-          justify-content: center;
-        }
-      }
-
-      ul {
-        max-width: 100%;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        margin-top: 1rem;
-      }
-
-      p {
-        text-align: center;
-      }
+    ul {
+      max-width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-top: 1rem;
     }
   }
 `
