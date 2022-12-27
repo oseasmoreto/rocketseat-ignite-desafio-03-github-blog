@@ -29,6 +29,7 @@ export interface Post {
 
 interface PostContextType {
   posts: Post[]
+  countPosts: number
   fetchPosts: (query?: string) => Promise<void>
 }
 
@@ -58,6 +59,7 @@ export const PostsContext = createContext({} as PostContextType)
 
 export function PostProvider({ children }: PostProviderProps) {
   const [posts, setPosts] = useState<Post[]>([])
+  const [countPosts, setCountPosts] = useState<number>(0)
 
   const fetchPosts = useCallback(async (query?: string) => {
     const querySearch = query ? `${query} ` : ''
@@ -98,6 +100,7 @@ export function PostProvider({ children }: PostProviderProps) {
     })
 
     setPosts(postsData)
+    setCountPosts(postsData.length)
   }, [])
 
   useEffect(() => {
@@ -105,7 +108,7 @@ export function PostProvider({ children }: PostProviderProps) {
   }, [fetchPosts])
 
   return (
-    <PostsContext.Provider value={{ posts, fetchPosts }}>
+    <PostsContext.Provider value={{ posts, countPosts, fetchPosts }}>
       {children}
     </PostsContext.Provider>
   )
