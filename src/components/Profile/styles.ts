@@ -33,6 +33,7 @@ export const ProfileContainer = styled.section`
     flex-direction: column;
     justify-content: space-between;
     min-height: 148px;
+    max-width: 100%;
 
     h3 {
       font-family: Nunito, sans-serif;
@@ -67,5 +68,33 @@ export const ProfileContainer = styled.section`
         }
       }
     }
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 2rem 2.5rem;
+
+    h3 {
+      text-align: center;
+    }
+
+    ul {
+      max-width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-top: 1rem;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .link-github {
+    align-self: center;
+    justify-content: center;
   }
 `

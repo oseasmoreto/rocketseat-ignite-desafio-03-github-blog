@@ -8,4 +8,8 @@ export const HomeContainer = styled.div`
   gap: 3rem;
 
   height: 100%;
+
+  @media (max-width: 1024px) {
+    padding: 0 1rem;
+  }
 `
