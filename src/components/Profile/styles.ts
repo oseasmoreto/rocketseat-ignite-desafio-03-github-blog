@@ -23,11 +23,6 @@ export const ProfileContainer = styled.section`
     border-radius: 8px;
   }
 
-  .link-github {
-    align-self: flex-start;
-    justify-content: flex-start;
-  }
-
   .box-profile {
     display: flex;
     flex-direction: column;
@@ -35,11 +30,20 @@ export const ProfileContainer = styled.section`
     min-height: 148px;
     max-width: 100%;
 
-    h3 {
-      font-family: Nunito, sans-serif;
-      color: ${(props) => props.theme.title};
-      font-size: 1.5rem;
-      line-height: 1.3;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        font-family: Nunito, sans-serif;
+        color: ${(props) => props.theme.title};
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+
+      .link-github {
+        align-self: flex-start;
+        justify-content: flex-start;
+      }
     }
 
     p {
@@ -77,24 +81,34 @@ export const ProfileContainer = styled.section`
     max-width: 100%;
     padding: 2rem 2.5rem;
 
-    h3 {
-      text-align: center;
-    }
+    .box-profile {
+      .header {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
 
-    ul {
-      max-width: 100%;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      margin-top: 1rem;
-    }
+        h3 {
+          text-align: center;
+          margin-bottom: 1rem;
+        }
 
-    p {
-      text-align: center;
-    }
-  }
+        .link-github {
+          align-self: center;
+          justify-content: center;
+        }
+      }
 
-  .link-github {
-    align-self: center;
-    justify-content: center;
+      ul {
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 1rem;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
   }
 `

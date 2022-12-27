@@ -6,7 +6,17 @@ export function Profile() {
     <ProfileContainer>
       <img src="https://github.com/oseasmoreto.png" alt="Oséas Moreto" />
       <div className="box-profile">
-        <h3>Oséas Moreto</h3>
+        <div className="header">
+          <h3>Oséas Moreto</h3>
+          <a
+            href="https://github.com/oseasmoreto"
+            target="_blank"
+            rel="noreferrer"
+            className="link-github"
+          >
+            GITHUB <Link size={16} />
+          </a>
+        </div>
         <p>
           Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
           viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
@@ -24,14 +34,6 @@ export function Profile() {
           </li>
         </ul>
       </div>
-      <a
-        href="https://github.com/oseasmoreto"
-        target="_blank"
-        rel="noreferrer"
-        className="link-github"
-      >
-        GITHUB <Link size={16} />
-      </a>
     </ProfileContainer>
   )
 }
