@@ -10,7 +10,7 @@ interface ItemProps {
 
 export function Item({ post }: ItemProps) {
   return (
-    <NavLink className="no-hover" to={`/post/${post.id}`}>
+    <NavLink className="no-hover" to={`/post/${post.number}`}>
       <ItemContainer>
         <div className="header">
           <h4>{post.title}</h4>

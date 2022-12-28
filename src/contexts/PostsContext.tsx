@@ -19,6 +19,7 @@ export interface User {
 
 export interface Post {
   id: number
+  number: number
   title: string
   date: string
   body: string
@@ -29,8 +30,10 @@ export interface Post {
 
 interface PostContextType {
   posts: Post[]
+  post: Post | null
   countPosts: number
   fetchPosts: (query?: string) => Promise<void>
+  findPost: (id: number) => Promise<void>
 }
 
 interface PostProviderProps {
@@ -39,6 +42,7 @@ interface PostProviderProps {
 
 interface GitHubType {
   id: number
+  number: number
   title: string
   created_at: string
   body: string
@@ -59,6 +63,7 @@ export const PostsContext = createContext({} as PostContextType)
 
 export function PostProvider({ children }: PostProviderProps) {
   const [posts, setPosts] = useState<Post[]>([])
+  const [post, setPost] = useState<Post | null>(null)
   const [countPosts, setCountPosts] = useState<number>(0)
 
   const fetchPosts = useCallback(async (query?: string) => {
@@ -78,6 +83,7 @@ export function PostProvider({ children }: PostProviderProps) {
     data.items.map((item: GitHubType) => {
       const post: Post = {
         id: item.id,
+        number: item.number,
         title: item.title,
         date: item.created_at,
         body: item.body,
@@ -103,12 +109,43 @@ export function PostProvider({ children }: PostProviderProps) {
     setCountPosts(postsData.length)
   }, [])
 
+  const findPost = useCallback(async (id: number) => {
+    const url = `repos/${import.meta.env.VITE_GITHUB_USER}/${
+      import.meta.env.VITE_GITHUB_REPO
+    }/issues/${id}`
+
+    const { data } = await api.get(url)
+
+    const postsData: Post | null = {
+      id: data.id,
+      number: data.number,
+      title: data.title,
+      date: data.created_at,
+      body: data.body,
+      link: data.html_url,
+      comments: data.comments,
+      user: {
+        name: data.user.name,
+        user: data.user.login,
+        company: data.user.company,
+        bio: data.user.bio,
+        photo: data.user.avatar_url,
+        followers: data.user.followers,
+        url: data.user.html_url,
+      },
+    }
+
+    setPost(postsData)
+  }, [])
+
   useEffect(() => {
     fetchPosts()
   }, [fetchPosts])
 
   return (
-    <PostsContext.Provider value={{ posts, countPosts, fetchPosts }}>
+    <PostsContext.Provider
+      value={{ posts, post, countPosts, fetchPosts, findPost }}
+    >
       {children}
     </PostsContext.Provider>
   )
