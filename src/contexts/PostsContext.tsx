@@ -106,7 +106,7 @@ export function PostProvider({ children }: PostProviderProps) {
     })
 
     setPosts(postsData)
-    setCountPosts(postsData.length)
+    setCountPosts(data.total_count)
   }, [])
 
   const findPost = useCallback(async (id: number) => {
